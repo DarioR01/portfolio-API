@@ -12,7 +12,7 @@ let port = process.env.PORT || 3000
 //import Routes
 const articleRoute = require('./routes/Articles')
 const password = "questa"
-app.use(`${password}/article`, articleRoute);
+app.use(`/${password}/article`, articleRoute);
 
 try{
     mongoose.connect(process.env.DB_CONNECTION, {useNewUrlParser: true})
