@@ -11,7 +11,8 @@ let port = process.env.PORT || 3000
 //import Routes
 const articleRoute = require('./routes/Articles')
 
-app.use('/article', articleRoute);
+pass="pass"
+app.use(`/${pass}/article`, articleRoute);
 
 try{
     mongoose.connect(process.env.DB_CONNECTION, {useNewUrlParser: true})
