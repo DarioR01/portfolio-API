@@ -13,6 +13,11 @@ const articleRoute = require('./routes/Articles')
 
 app.use('/article', articleRoute);
 
-mongoose.connect(process.env.DB_CONNECTION, {useNewUrlParser: true})
+try{
+    mongoose.connect(process.env.DB_CONNECTION, {useNewUrlParser: true})
+}
+catch(err){
+    console.log("could not connect to database, response error: ", err)
+}
 
 app.listen(port);
